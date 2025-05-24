@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome\nThis site demonstrates two different analyses:\n\nTime Series Analysis (Matplotlib)\n\nInteractive Scatter Plot (Plotly)\n\nUse the Analyses menu above to navigate."
+  },
+  {
+    "objectID": "analysis_scatter.html",
+    "href": "analysis_scatter.html",
+    "title": "Interactive Scatter Analysis",
+    "section": "",
+    "text": "This notebook creates interactive 3D and 2D scatter plots.\n\n\nCode\nimport plotly.express as px\nimport numpy as np\nimport pandas as pd\n\nnp.random.seed(42)\ndf2 = pd.DataFrame({\n    'x': np.random.randn(200),\n    'y': np.random.randn(200),\n    'z': np.random.randn(200),\n    'category': np.random.choice(['A','B','C'], size=200)\n})\n\nfig = px.scatter_3d(\n    df2, x='x', y='y', z='z',\n    color='category',\n    title='Interactive 3D Scatter by Category'\n)\nfig.show()\n\n\n\n\nCode\nfig2 = px.scatter(\n    df2, x='x', y='y', marginal_x='histogram', marginal_y='box',\n    title='Scatter with Marginal Distributions'\n)\nfig2.show()"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About This Project",
+    "section": "",
+    "text": "About\nThis demonstration was built with Quarto. The notebooks:\n\nanalysis_timeseries.ipynb shows a synthetic time-series decomposition.\n\nanalysis_scatter.ipynb creates an interactive 3D scatter of random data.\n\nBoth run automatically when you build the site."
+  },
+  {
+    "objectID": "analysis_timeseries.html",
+    "href": "analysis_timeseries.html",
+    "title": "Time Series Analysis",
+    "section": "",
+    "text": "This notebook demonstrates time-series decomposition.\n\n\nCode\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom statsmodels.tsa.seasonal import seasonal_decompose\n\ndf = pd.read_csv('data/sample.csv', parse_dates=['date'], index_col='date')\n\nfig, ax = plt.subplots()\ndf['value'].plot(ax=ax, title='Monthly Values')\nax.set_ylabel('Value')\nplt.show()\n\nresult = seasonal_decompose(df['value'], model='additive', period=3)\nfig = result.plot()\nfig.suptitle('Additive Decomposition', y=1.02)\nplt.tight_layout()\nplt.show()\n\n\n\n\nCode\ndf['rolling_mean'] = df['value'].rolling(window=2).mean()\nfig, ax = plt.subplots()\ndf[['value', 'rolling_mean']].plot(ax=ax, title='Value vs. 2-Month Rolling Mean')\nax.set_ylabel('Value')\nplt.show()"
+  }
+]

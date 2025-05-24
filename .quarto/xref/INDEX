@@ -1,0 +1,14 @@
+{
+  "about.qmd": {
+    "about.html": "ccc3ce88"
+  },
+  "analysis_scatter.ipynb": {
+    "analysis_scatter.html": "23769afb"
+  },
+  "analysis_timeseries.ipynb": {
+    "analysis_timeseries.html": "26b593b7"
+  },
+  "index.qmd": {
+    "index.html": "c49a1abf"
+  }
+}

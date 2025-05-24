@@ -1,0 +1,12 @@
+---
+title: "About This Project"
+---
+
+# About
+
+This demonstration was built with Quarto. The notebooks:
+
+- `analysis_timeseries.ipynb` shows a synthetic time-series decomposition.  
+- `analysis_scatter.ipynb` creates an interactive 3D scatter of random data.
+
+Both run automatically when you build the site.

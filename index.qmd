@@ -1,0 +1,12 @@
+---
+title: "Welcome"
+---
+
+# Welcome
+
+This site demonstrates two different analyses:
+
+1. **Time Series Analysis** (Matplotlib)  
+2. **Interactive Scatter Plot** (Plotly)
+
+Use the **Analyses** menu above to navigate.

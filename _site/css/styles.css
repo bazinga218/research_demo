@@ -1,0 +1,10 @@
+/* Simple tweak: make all figure captions italic and centered */
+.figcaption {
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5em;
+}
+/* Header background color */
+header {
+  background-color: #f5f5f5;
+}
